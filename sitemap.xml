@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.lequmengchong.com/</loc>
+    <loc>https://www.lqmc.net/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.lequmengchong.com/pokedex.html</loc>
+    <loc>https://www.lqmc.net/pokedex.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.lequmengchong.com/features.html</loc>
+    <loc>https://www.lqmc.net/features.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lequmengchong.com/rewards.html</loc>
+    <loc>https://www.lqmc.net/rewards.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.lequmengchong.com/news.html</loc>
+    <loc>https://www.lqmc.net/news.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lequmengchong.com/download.html</loc>
+    <loc>https://www.lqmc.net/download.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
