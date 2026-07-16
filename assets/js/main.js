@@ -121,12 +121,63 @@
     });
   }
 
+  // 兑换码一键复制
+  function initCopyCodes() {
+    var btns = document.querySelectorAll('.copy-code-btn');
+    if (!btns.length) return;
+
+    function showFeedback(btn, ok) {
+      var textEl = btn.querySelector('.code-text');
+      var original = textEl ? textEl.textContent : '';
+      if (textEl) textEl.textContent = ok ? '已复制' : '复制失败';
+      btn.classList.remove('copied', 'failed');
+      btn.classList.add(ok ? 'copied' : 'failed');
+      setTimeout(function () {
+        if (textEl) textEl.textContent = original;
+        btn.classList.remove('copied', 'failed');
+      }, 1500);
+    }
+
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var code = btn.getAttribute('data-code') || '';
+        if (!code) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(
+            function () { showFeedback(btn, true); },
+            function () { fallbackCopy(code, btn); }
+          );
+        } else {
+          fallbackCopy(code, btn);
+        }
+      });
+    });
+
+    function fallbackCopy(text, btn) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        showFeedback(btn, ok);
+      } catch (e) {
+        showFeedback(btn, false);
+      }
+    }
+  }
+
   function init() {
     initIcons();
     initMobileMenus();
     initPokedexFilter();
     initNewsFilter();
     initPagination();
+    initCopyCodes();
   }
 
   if (document.readyState === 'loading') {
